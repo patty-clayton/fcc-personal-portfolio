@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+  }
+
+body, html {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    --rich-black: hsla(225, 50%, 9%, 0.7);
+    --gainsboro: hsla(220, 1%, 98%, 0.9);
+    --silver: hsla(32, 9%, 68%, 0.3);
+    --space: hsla(228, 55%, 31%, 1);
+    font-family: 'Overpass', sans-serif;
+    background-color: var(--gainsboro);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+body >* {
+    width: 100%;
+    flex-grow: 1;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    background-color: var(--gainsboro);
+    width: 100%;
+    text-align: right;
+    margin-right: 30px;
+    padding: 20px;
+    z-index: 2;
+}
+
+.nav-link {
+    padding: 10px;
+    color: black;
+}
+
+a.nav-link:hover {
+    font-style: italic;
+}
+
+section {
+    text-align: center;
+}
+
+#welcome-section, #contact-section {
+    height: 100%;
+    background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+    color: white;
+}
+
+#welcome, #contact {
+    margin-top: 25%;
+}
+
+h1 {
+    font-size: 5em;
+}
+
+h2 {
+    font-style: italic;
+    font-weight: lighter;
+}
+
+.project-grid {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.project-tile {
+    width: calc((100% / 3) - 40px);
+    max-height: 600px;
+    margin: 20px;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+.proj-img {
+    height: 90%;
+    z-index: -1;
+}  
+
+h3 {
+    text-transform: uppercase;
+    font-size: 24px;
+    color: black;
+    line-height: 50px;
+    margin: 0;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+#contact-links {
+    z-index: 1;
+}
+
+.con-link {
+    margin: 5px;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 24px;
+    background-color: black;
+}
+
+a.con-link:hover {
+    background-color: var(--rich-black);
+}
+
+a.con-link:visited {
+    color: white;
+}
+
+@media all and (max-width: 1200px) {
+    .project-tile {
+        width: calc((100% / 2) - 40px);
+    }
+}
+
+@media all and (max-width: 768px) {
+    .project-tile {
+        width: 100%;
+    }
+    nav {
+        text-align: center;
+    }
+    .con-link {
+        display: block;
+    }
+}
